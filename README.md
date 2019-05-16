@@ -25,6 +25,7 @@ Things you may want to cover:
 ### Userテーブル
 #User_groupテーブルとのアソシエーション
 has_many :groups ,through: :users_group
+has_many :users_group
 #Comment テーブルのアソシエーション
 has_many :comments
 
@@ -44,6 +45,7 @@ belongs_to :group
 ### Groupテーブル
 #User_groupテーブルとのアソシエーション
 has_many :users,through: :users_group
+has_many :users_group
 #Comment テーブルのアソシエーション
 has_many :comments
 
