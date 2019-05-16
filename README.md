@@ -23,8 +23,8 @@ Things you may want to cover:
 
 # chat-space
 ### Userテーブル
-#Group_userテーブルとのアソシエーション
-has_many :groups ,through: :user_group
+#User_groupテーブルとのアソシエーション
+has_many :groups ,through: :users_group
 #Comment テーブルのアソシエーション
 has_many :comments
 
@@ -42,9 +42,8 @@ belongs_to :group
 |user_id    |references|false|false |false |true       |
 
 ### Groupテーブル
-#Group_userテーブルとのアソシエーション
-has_many :users,through: :group_users
-has_many :group_users
+#User_groupテーブルとのアソシエーション
+has_many :users,through: :users_group
 #Comment テーブルのアソシエーション
 has_many :comments
 
