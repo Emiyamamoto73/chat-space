@@ -1,47 +1,48 @@
 .wrapper
-
-.side_box
-  .side_box_above
-    .info_box
-      %p 
-      user_name
-      
-      %ul 
-        menu_box
-        %li new_group
-        %li setting
-
-  .side_box_main
-    .group_box
-      %p group_name
-      %p latest_message
-
-      
-
-.content
-  .content_above
-    .current_group
-      %h2 current_group_name
-      %ul member_list
-
-    .edit_btn
-    Edit
-
-  .content_main
-    .message_box
-      %p message_text
-
-      .message_info_box
-        %p name
-        %p date
-        
-
-
-  .content_btm
-    %form
-      %input input_message 
-      type a message
-      %input input_pic
-
-    %input send_btn
-    send
+  .chat-side
+    .side-header
+      .side-header__box
+        %p.side-header__box__user-name test
+        %ul.side-header__box__menu
+          %li.side-header__box__menu__new-group
+            %a{:href => "/groups/new"}
+              %i.fa.fa-edit
+          %li.side-header__box__menu__edit-user
+            %a{:href => "/users/471/edit"}
+              %i.fa.fa-cog
+    .groups
+      %a{:href => "/groups/960/messages"}
+        .group
+          %p.group__group-name test
+          %p.group__latest-message sssssss
+  .chat-main
+    .main-header
+      .main-header__left-box
+        %h2.main-header__left-box__current-group{"data-group_id" => "960"}
+          aaa
+        %ul.main-header__left-box__member-list
+          Member：
+          %li.main-header__left-box__member-list__member test
+      %a{:href => "/groups/960/edit"}
+        .main-header__edit-btn Edit
+    .messages
+      .message{"data-message_id" => "2282"}
+        .message__upper-info
+          %p.message__upper-info__talker test
+          %p.message__upper-info__date 2019/05/16(Thu) 14:29:13
+        %p.message__text sssssss
+      .message{"data-message_id" => "2296"}
+        .message__upper-info
+          %p.message__upper-info__talker test
+          %p.message__upper-info__date 2019/05/16(Thu) 16:48:17
+        %p.message__text kjjjjjjjjjjjjjjjjjj
+    .form
+      %form#new_message.new_message{"accept-charset" => "UTF-8", :action => "/groups/960/messages", :enctype => "multipart/form-data", :method => "post"}
+        %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+        %input{:name => "authenticity_token", :type => "hidden", :value => "kVyzxioNMCZGxXKXme3NPuOyoR7kAQBr0iVejxV2fZBIGz3lp99Lq2nmrh32ldXJBGot/466b2q/XhiD8YX98g=="}/
+        .input-box
+          %input#message_content.input-box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
+          %label.input-box__image{:for => "message_image"}
+            %i.fa.fa-image
+            %input#message_image.input-box__image__file{:name => "message[image]", :type => "file"}/
+        %input.submit-btn{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
