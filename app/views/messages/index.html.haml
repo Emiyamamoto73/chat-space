@@ -1,0 +1,47 @@
+.wrapper
+
+.side_box
+  .side_box_above
+    .info_box
+      %p 
+      user_name
+      
+      %ul 
+        menu_box
+        %li new_group
+        %li setting
+
+  .side_box_main
+    .group_box
+      %p group_name
+      %p latest_message
+
+      
+
+.content
+  .content_above
+    .current_group
+      %h2 current_group_name
+      %ul member_list
+
+    .edit_btn
+    Edit
+
+  .content_main
+    .message_box
+      %p message_text
+
+      .message_info_box
+        %p name
+        %p date
+        
+
+
+  .content_btm
+    %form
+      %input input_message 
+      type a message
+      %input input_pic
+
+    %input send_btn
+    send
