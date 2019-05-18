@@ -1,57 +1,88 @@
-.body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  display: block;
-  color: #000;
-  display: none;
-
-
-.flash_box {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  display: block;
-  display: none;
-
-
 .wrapper {
-  box-sizing: border-box;
-  display: block;
-  color: #000;
-  display: none;
-  margin: 0;
-  padding: 0;
-
-
-.chat-side {
-  width: 300px;
-  color: white;
-  float: left;
-
-
-.side-header {
-  background-color: #253141;
-  height: 100px;
   display: flex;
-  align-items: center;
-  padding: 0 20px;
-  color: white;
+  
 
-.groups {
-  height: calc(100vh - 100px);
-  background-color: #2f3e51;
-  padding: 20px 20px 0;
-  overflow: scroll;
+  .chat-side {
+    background-color: #2f3e51;
+    width: 300px;
+  
+    
+      .side-header__box {
+        font-size: 16px;
+        font-weight: bold;
+        color: #ffffff;
+        background-color: #253141;
+        height: 100px;
+        padding: 0 20px;
+        align-items: center;
+        display: flex;
+        
+          .side-header__box__menu {
+            float: right;
+            display: inline-block;
+                
+          }
+      }
+      .groups {
+        padding: 20px 20px 40px;
+      　
 
-.chat-main {
-  width: calc(100vw - 300px);
-  float: left;
-}
+        .group__group-name {
+          font-size: 15px;
+          font-weight: bold;
+          color: #ffffff; 
+          margin-bottom: 5px;
+        }
+        .group__latest-message {
+          font-size: 11px;
+          font-weight: bold;
+          color: #ffffff;
+          
+        }  
+      }
+    
+  }
+
+  .chat-main {
+    width: calc(100% - 300px);
+    background-color: #fafafa;
+    padding: 0 40px;
+    
+    .main-header {
+      height: 100px;
+      justify-content: space-between;
+      
+        .main-header__left-box {
+          padding-top: 35px;
+          
+            .main-header__left-box__current-group {
+              font-size: 20px;
+              color: #333333; 
+            }
+            .main-header__left-box__member-list {
+              font-size: 12px;
+              color: #999999;
+              display: flex;
+
+            }
+        .main-header__edit-btn {
+          float: right;
+          height: 40px;
+          line-height: 40px;
+          margin-top: 28px;
+          padding: 0 20px;
+        }
+        }
+    }
+
+    
+
+  }
 
 }
-}
-}
-}
-}
-}
+
+
+
+
+
+

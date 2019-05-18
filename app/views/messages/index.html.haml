@@ -2,7 +2,7 @@
   .chat-side
     .side-header
       .side-header__box
-        %p.side-header__box__user-name test
+        %p.side-header__box__user-name test-user
         %ul.side-header__box__menu
           %li.side-header__box__menu__new-group
             %a{:href => "/groups/new"}
@@ -13,29 +13,29 @@
     .groups
       %a{:href => "/groups/960/messages"}
         .group
-          %p.group__group-name test
-          %p.group__latest-message sssssss
+          %p.group__group-name test-group
+          %p.group__latest-message こんにちわ！
   .chat-main
     .main-header
       .main-header__left-box
         %h2.main-header__left-box__current-group{"data-group_id" => "960"}
-          aaa
+          sample-group
         %ul.main-header__left-box__member-list
           Member：
-          %li.main-header__left-box__member-list__member test
+          %li.main-header__left-box__member-list__member test-list
       %a{:href => "/groups/960/edit"}
         .main-header__edit-btn Edit
     .messages
       .message{"data-message_id" => "2282"}
         .message__upper-info
-          %p.message__upper-info__talker test
+          %p.message__upper-info__talker test-talker
           %p.message__upper-info__date 2019/05/16(Thu) 14:29:13
-        %p.message__text sssssss
+        %p.message__text Hello!
       .message{"data-message_id" => "2296"}
         .message__upper-info
-          %p.message__upper-info__talker test
+          %p.message__upper-info__talker test-talker
           %p.message__upper-info__date 2019/05/16(Thu) 16:48:17
-        %p.message__text kjjjjjjjjjjjjjjjjjj
+        %p.message__text こんばんわ
     .form
       %form#new_message.new_message{"accept-charset" => "UTF-8", :action => "/groups/960/messages", :enctype => "multipart/form-data", :method => "post"}
         %input{:name => "utf8", :type => "hidden", :value => "✓"}/
