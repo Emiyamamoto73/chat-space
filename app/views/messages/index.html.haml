@@ -37,9 +37,7 @@
           %p.message__upper-info__date 2019/05/16(Thu) 16:48:17
         %p.message__text こんばんわ
     .form
-      %form#new_message.new_message(action="/groups/960/messages" enctype="multipart/form-data" method="post")
-        %input(name="utf8" type="hidden" value="✓")
-        %input(name="authenticity_token" type="hidden" value="kVyzxioNMCZGxXKXme3NPuOyoR7kAQBr0iVejxV2fZBIGz3lp99Lq2nmrh32ldXJBGot/466b2q/XhiD8YX98g==")
+      %form#new_message.new_message
         .input-box
           %input#message_content.input-box__text(name="message[content]" placeholder="type a message" type="text")
           %label.input-box__image(for="message_image")
