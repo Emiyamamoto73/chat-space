@@ -150,8 +150,8 @@ a {
             float: left;
             height: 50px;
             padding: 0 40px 0 10px;
-            width: 475px;
-            
+            width: calc(100% - 140px);
+            box-sizing: border-box;
           }
           
           .input-box__image {
@@ -159,6 +159,7 @@ a {
             position: absolute;
             background-color: white;
             margin-right: 25px;
+            height: 50px;
             .fa-image {
               padding: 18px 5px;
             }
@@ -167,7 +168,7 @@ a {
             background-color: #38AEF0;
             border: none;
             color: white;
-            margin-right: 50px;
+            margin-right: 0;
             height: 50px;
             float: right;
             padding: 0 30px;
