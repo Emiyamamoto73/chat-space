@@ -1,0 +1,179 @@
+a {
+  color: white;
+  text-decoration:none;
+}
+
+.side-header__box__menu__edit-user {
+  margin-left: 5px;
+  
+}
+.wrapper {
+  display: flex;
+  height: 100vh;
+  
+  
+
+  .chat-side {
+    background-color: #2f3e51;
+    width: 300px;
+    
+  
+    
+      .side-header__box {
+        font-size: 16px;
+        font-weight: bold;
+        color: #ffffff;
+        background-color: #253141;
+        height: 100px;
+        padding: 0 20px;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        
+        &__menu {
+          float: right;
+          display: flex;
+                
+        }
+      }
+      .groups {
+        padding: 20px 20px 40px;
+      　
+        .group__group-name {
+          font-size: 15px;
+          font-weight: bold;
+          color: #ffffff; 
+          margin-bottom: 5px;
+        }
+        .group__latest-message {
+          font-size: 11px;
+          font-weight: bold;
+          color: #ffffff;
+        }  
+      }
+    
+  }
+
+  .chat-main {
+    width: calc(100% - 300px);
+    background-color: #fafafa;
+    
+    
+    .main-header {
+      height: 100px;
+      justify-content: space-between;
+      border-bottom: solid #eeeeee 1px;
+      padding: 0 40px;
+      
+        &__left-box {
+          padding-top: 35px;
+          
+            &__edit-btn {
+              border: solid #38AEF0 1px; 
+              color: #38AEF0;
+            }
+
+            .main-header__left-box__current-group {
+              font-size: 20px;
+              color: #333333; 
+              margin: 0 0 12px;
+            }
+            .main-header__left-box__member-list {
+              font-size: 12px;
+              color: #999999;
+              display: flex;
+            }
+
+            .main-header__edit-btn {
+              float: right;
+              height: 40px;
+              line-height: 40px;
+              margin-top: 28px;
+              padding: 0 20px;
+            }
+        }
+  }  }  
+    .messages { 
+      background-color: #fafafa;
+      padding: 46px 40px;
+      height: calc(100% - 287px);
+      
+      
+
+        .message {
+          padding: 0 0 40px;
+
+          &__upper-info {
+            margin: 0 0 10px;
+            display: flex;
+
+            .message__upper-info__talker {
+              font-size: 16px;
+              font-weight: bold;
+              color: #434A54;
+            }
+            .message__upper-info__date {
+              font-size: 12px;
+              margin: 0 10px 0;
+              color: #999999;
+            }
+          }
+        }
+    }
+    .form {
+      padding: 20px 40px;
+      background-color: #DDDDDD;
+      display: flex;
+      
+      
+
+      form {
+        display: flex;
+        position: bottom;
+    
+      }
+
+      label > input{
+        display:none;
+        }
+      
+      
+        .new_message {
+          display: flex;
+          width: 100%;
+          display: inline;
+          box-sizing: border-box;
+          
+
+          .input-box__text {
+            background-color: white;
+            float: left;
+            height: 50px;
+            padding: 0 40px 0 10px;
+            width: calc(100% - 140px);
+            box-sizing: border-box;
+          }
+          
+          .input-box__image {
+            
+            position: absolute;
+            background-color: white;
+            margin-right: 25px;
+            height: 50px;
+            .fa-image {
+              padding: 18px 5px;
+            }
+          }
+          .submit-btn {
+            background-color: #38AEF0;
+            border: none;
+            color: white;
+            margin-right: 0;
+            height: 50px;
+            float: right;
+            padding: 0 30px;
+            
+          }
+        }
+    }  
+}
