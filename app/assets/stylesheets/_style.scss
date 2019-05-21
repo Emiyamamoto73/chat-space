@@ -30,7 +30,7 @@ a {
         display: flex;
         justify-content: space-between;
         
-        .side-header__box__menu {
+        &__menu {
           float: right;
           display: flex;
                 
@@ -65,10 +65,10 @@ a {
       border-bottom: solid #eeeeee 1px;
       padding: 0 40px;
       
-        .main-header__left-box {
+        &__left-box {
           padding-top: 35px;
           
-            .main-header__edit-btn {
+            &__edit-btn {
               border: solid #38AEF0 1px; 
               color: #38AEF0;
             }
@@ -103,7 +103,7 @@ a {
         .message {
           padding: 0 0 40px;
 
-          .message__upper-info {
+          &__upper-info {
             margin: 0 0 10px;
             display: flex;
 
