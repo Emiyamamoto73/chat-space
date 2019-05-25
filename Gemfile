@@ -62,3 +62,5 @@ gem 'pry-rails'
 
 gem "carrierwave"
 gem "mini_magick"
+
+gem "rspec-rails"
