@@ -1,47 +1,33 @@
 .wrapper
-  .chat-side
-    .side-header
-      .side-header__box
-        %p.side-header__box__user-name test-user
-        %ul.side-header__box__menu
-          %li.side-header__box__menu__new-group
-          = link_to "#" do
-            %i.fa.fa-edit
-          %li.side-header__box__menu__edit-user
-          = link_to "#" do
-            %i.fa.fa-cog
-    .groups
-      =link_to "#" do
-        .group
-          %p.group__group-name test-group
-          %p.group__latest-message こんにちわ！
-  .chat-main
-    .main-header
-      .main-header__left-box
-        %h2.main-header__left-box__current-group.data-group_id.960
-          sample-group
-        %ul.main-header__left-box__member-list
-          Member：
-          %li.main-header__left-box__member-list__member test-list
-      =link_to "#" do
-        .main-header__edit-btn Edit
-    .messages
-      .message.data-message_id.2282
-        .message__upper-info
-          %p.message__upper-info__talker test-talker
-          %p.message__upper-info__date 2019/05/16(Thu) 14:29:13
-        %p.message__text Hello!
-      .message.data-message_id.2296
-        .message__upper-info
-          %p.message__upper-info__talker test-talker
-          %p.message__upper-info__date 2019/05/16(Thu) 16:48:17
-        %p.message__text こんばんわ
 
+  = render 'devise/shared/side_bar'
+  
+  .chat
+    .header
+      .left-header
+        .left-header__title
+          グループ名
+        %ul.left-header__members
+          Member：
+          %li.member
+            メンバー名
+          %li.member
+            メンバー名
+          %li.member
+            メンバー名
+      .right-header
+        .right-header__button
+          Edit
+
+    .messages
+      = render partial: 'messages/message', collection: @messages
+      
     .form
-      %form#new_message.new_message
-        .input-box
-          %input#message_content.input-box__text(name="message[content]" placeholder="type a message" type="text")
-          %label.input-box__image(for="message_image")
-            %i.fa.fa-image
-            %input#message_image.input-box__image__file(name="message[image]" type="file")
-        %input.submit-btn(name="commit" type="submit" value="Send")
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
+        
