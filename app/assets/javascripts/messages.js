@@ -1,6 +1,5 @@
 $(function(){
   function buildHTML(message){
-    // console.log(message)
     var image = message.image ? `<img src= ${message.image}>` : "";
     var html = `<div class="message" data-id = ${message.id}>
                   <div class="upper-message">
@@ -57,7 +56,6 @@ $(function(){
     })
     .done(function(data){
       var html = buildHTML(data);
-      // console.log(data)
       $('.messages').append(html);
       $("form")[0].reset();
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
@@ -81,7 +79,6 @@ $(function(){
         data: {id: last_message_id}   //dataオプションでリクエストに値を含める
       })
       .done(function(messages) {
-        // console.log(messages)
           messages.forEach(function(message){
             var html = insertHTML(message);
             $(".messages").append(html);
@@ -91,7 +88,7 @@ $(function(){
         
       })
       .fail(function () {
-        // console.log('error')
+        console.log('error')
       });
      }
      setInterval(reloadMessages, 5000);
