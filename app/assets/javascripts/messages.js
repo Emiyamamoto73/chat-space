@@ -88,7 +88,7 @@ $(function(){
         
       })
       .fail(function () {
-        console.log('error')
+        alert('ユーザー検索に失敗しました');
       });
      }
      setInterval(reloadMessages, 5000);
