@@ -72,6 +72,7 @@ $(function(){
   $(function() {
     var reloadMessages = function() {
       last_message_id = $(".message").last().data("id");  //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
+      if(window.location.href.match(/\/groups\/\d+\/messages/)) {
       $.ajax({
         url: 'api/messages',  //ルーティングで設定した通りのURLを指定
         type: 'GET',
@@ -79,19 +80,18 @@ $(function(){
         data: {id: last_message_id}   //dataオプションでリクエストに値を含める
       })
       .done(function(messages) {
+        console.log(messages)
           messages.forEach(function(message){
             var html = insertHTML(message);
             $(".messages").append(html);
             $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
           })
-        
-        
       })
       .fail(function () {
-        alert('ユーザー検索に失敗しました');
+        console.log('自動更新失敗');
       });
-     }
+     }}
      setInterval(reloadMessages, 5000);
     })
-      
+    
 });
